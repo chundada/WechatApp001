@@ -1,0 +1,91 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "瘦身搭档",
+        "navigationBarBackgroundColor": "#1C1C1E",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/record/index",
+      "style": {
+        "navigationBarTitleText": "体重记录",
+        "navigationBarBackgroundColor": "#1C1C1E",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/chart/index",
+      "style": {
+        "navigationBarTitleText": "数据统计",
+        "navigationBarBackgroundColor": "#1C1C1E",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/friends/index",
+      "style": {
+        "navigationBarTitleText": "好友对比",
+        "navigationBarBackgroundColor": "#1C1C1E",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/competition/index",
+      "style": {
+        "navigationBarTitleText": "挑战赛",
+        "navigationBarBackgroundColor": "#1C1C1E",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/achievements/index",
+      "style": {
+        "navigationBarTitleText": "我的成就",
+        "navigationBarBackgroundColor": "#1C1C1E",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/profile/index",
+      "style": {
+        "navigationBarTitleText": "个人中心",
+        "navigationBarBackgroundColor": "#1C1C1E",
+        "navigationBarTextStyle": "white"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "瘦身搭档",
+    "navigationBarBackgroundColor": "#1C1C1E",
+    "backgroundColor": "#1C1C1E",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#8E8E93",
+    "selectedColor": "#007AFF",
+    "borderStyle": "black",
+    "backgroundColor": "#2C2C2E",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/record/index",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/friends/index",
+        "text": "好友"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  }
+}

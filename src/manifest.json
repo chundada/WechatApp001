@@ -1,0 +1,28 @@
+{
+  "name": "瘦身搭档",
+  "appid": "__UNI__SLIM_PARTNER",
+  "description": "减肥打卡小程序，记录体重变化，与好友一起挑战",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "h5": {
+    "title": "瘦身搭档",
+    "router": {
+      "mode": "hash"
+    },
+    "optimization": {
+      "treeShaking": {
+        "enable": true
+      }
+    }
+  },
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false
+    },
+    "usingComponents": true,
+    "cloudfunctionRoot": "cloudfunctions/",
+    "cloud": true
+  }
+}
