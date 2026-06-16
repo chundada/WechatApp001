@@ -70,7 +70,7 @@ function formatDate(timestamp?: number) {
 
 .page {
   min-height: 100vh;
-  background: $apple-dark-gray;
+  background: $apple-light-gray;
   padding: 32rpx;
 }
 

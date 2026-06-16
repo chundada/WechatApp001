@@ -1,10 +1,9 @@
-$apple-black: #000000;
-$apple-dark-gray: #1C1C1E;
-$apple-gray: #2C2C2E;
-$apple-light-gray: #3A3A3C;
-$apple-border: #48484A;
-$apple-text: #FFFFFF;
-$apple-text-secondary: #8E8E93;
+$apple-white: #FFFFFF;
+$apple-light-gray: #F2F2F7;
+$apple-medium-gray: #E5E5EA;
+$apple-border: #E5E5EA;
+$apple-text: #1D1D1F;
+$apple-text-secondary: #86868B;
 $apple-text-muted: #AEAEB2;
 $apple-blue: #007AFF;
 $apple-green: #34C759;
@@ -14,14 +13,12 @@ $apple-pink: #FF2D55;
 $apple-purple: #AF52DE;
 $apple-cyan: #5AC8FA;
 
-$primary-gradient: linear-gradient(135deg, #FF6B6B, #FF8E53);
-$secondary-gradient: linear-gradient(135deg, #667EEA, #764BA2);
-$success-gradient: linear-gradient(135deg, #52C41A, #73D13D);
-$card-gradient: rgba(255, 255, 255, 0.05);
-$hover-gradient: rgba(255, 255, 255, 0.08);
+$primary-gradient: linear-gradient(135deg, #007AFF, #5AC8FA);
+$secondary-gradient: linear-gradient(135deg, #AF52DE, #FF2D55);
+$success-gradient: linear-gradient(135deg, #34C759, #30D158);
 
 page {
-  background-color: $apple-dark-gray;
+  background-color: $apple-light-gray;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
   font-size: 28rpx;
   color: $apple-text;
@@ -34,27 +31,21 @@ page {
 }
 
 .card {
-  background: $apple-gray;
-  border-radius: 24rpx;
+  background: $apple-white;
+  border-radius: 20rpx;
   padding: 32rpx;
-  margin-bottom: 24rpx;
-  border: 1rpx solid $apple-border;
-  box-shadow: 
-    0 4rpx 24rpx rgba(0, 0, 0, 0.3),
-    inset 0 1rpx 0 rgba(255, 255, 255, 0.05);
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
 }
 
 .btn-primary {
   background: $apple-blue;
   color: #FFFFFF;
   border: none;
-  border-radius: 44rpx;
-  padding: 28rpx 56rpx;
-  font-size: 30rpx;
+  border-radius: 40rpx;
+  padding: 24rpx 48rpx;
+  font-size: 28rpx;
   font-weight: 500;
-  box-shadow: 
-    0 4rpx 16rpx rgba(0, 122, 255, 0.3),
-    inset 0 1rpx 0 rgba(255, 255, 255, 0.1);
   
   &:active {
     opacity: 0.8;
@@ -66,13 +57,13 @@ page {
   background: $apple-light-gray;
   color: $apple-text;
   border: none;
-  border-radius: 44rpx;
-  padding: 28rpx 56rpx;
-  font-size: 30rpx;
+  border-radius: 40rpx;
+  padding: 24rpx 48rpx;
+  font-size: 28rpx;
   font-weight: 500;
   
   &:active {
-    background: $apple-border;
+    background: $apple-medium-gray;
     transform: scale(0.98);
   }
 }
@@ -81,13 +72,13 @@ page {
   background: transparent;
   color: $apple-blue;
   border: none;
-  border-radius: 44rpx;
-  padding: 28rpx 56rpx;
-  font-size: 30rpx;
+  border-radius: 40rpx;
+  padding: 24rpx 48rpx;
+  font-size: 28rpx;
   font-weight: 500;
   
   &:active {
-    background: rgba(0, 122, 255, 0.1);
+    background: rgba(0, 122, 255, 0.06);
   }
 }
 
@@ -143,30 +134,3 @@ page {
 .ml-2 { margin-left: 16rpx; }
 
 .w-full { width: 100%; }
-
-.glass-effect {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1rpx solid rgba(255, 255, 255, 0.1);
-}
-
-.shimmer {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.05) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}

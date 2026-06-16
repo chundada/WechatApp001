@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/record/index",
+    "pages/chart/index",
+    "pages/friends/index",
+    "pages/competition/index",
+    "pages/achievements/index",
+    "pages/profile/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "瘦身搭档",
+    "navigationBarBackgroundColor": "#1C1C1E",
+    "backgroundColor": "#1C1C1E",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#8E8E93",
+    "selectedColor": "#007AFF",
+    "borderStyle": "black",
+    "backgroundColor": "#2C2C2E",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/record/index",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/friends/index",
+        "text": "好友"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "cloud": true,
+  "usingComponents": {}
+}

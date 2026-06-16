@@ -294,7 +294,7 @@ function getDayWeight(dayName: string) {
 
 .page {
   min-height: 100vh;
-  background: $apple-dark-gray;
+  background: $apple-light-gray;
   padding: 32rpx;
 }
 
@@ -327,10 +327,10 @@ function getDayWeight(dayName: string) {
   border-radius: 8rpx;
   
   &.active {
-    background: $apple-gray;
+    background: $apple-white;
     color: $apple-blue;
     font-weight: 600;
-    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -399,7 +399,7 @@ function getDayWeight(dayName: string) {
     height: 20rpx;
     background: $apple-blue;
     border-radius: 50%;
-    border: 4rpx solid $apple-gray;
+    border: 4rpx solid $apple-white;
     box-shadow: 0 4rpx 12rpx rgba(0, 122, 255, 0.4);
   }
   

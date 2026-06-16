@@ -178,13 +178,13 @@ function inviteFriends() {
 
 .page {
   min-height: 100vh;
-  background: $apple-dark-gray;
+  background: $apple-light-gray;
   padding: 32rpx;
   padding-bottom: 180rpx;
 }
 
 .group-banner {
-  background: $apple-gray;
+  background: $apple-white;
   color: $apple-text;
   padding: 28rpx;
   border-radius: 24rpx;
@@ -192,7 +192,7 @@ function inviteFriends() {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 32rpx;
-  border: 1rpx solid $apple-border;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
   
   .group-info {
     display: flex;
@@ -251,9 +251,9 @@ function inviteFriends() {
   align-items: center;
   padding: 24rpx;
   margin-bottom: 16rpx;
-  background: $apple-gray;
+  background: $apple-white;
   border-radius: 20rpx;
-  border: 1rpx solid $apple-border;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
   
   &:last-child {
     margin-bottom: 0;
@@ -285,7 +285,7 @@ function inviteFriends() {
   
   &.silver {
     background: linear-gradient(135deg, #E8E8E8, #C0C0C0);
-    color: $apple-dark-gray;
+    color: $apple-text;
     box-shadow: 0 4rpx 16rpx rgba(200, 200, 200, 0.4);
   }
   

@@ -385,7 +385,7 @@ function selectGroup(group: any) {
 
 .page {
   min-height: 100vh;
-  background: $apple-dark-gray;
+  background: $apple-light-gray;
 }
 
 .init-modal {
@@ -394,7 +394,7 @@ function selectGroup(group: any) {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, $apple-dark-gray 0%, $apple-gray 100%);
+  background: $apple-light-gray;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,12 +404,11 @@ function selectGroup(group: any) {
 
 .init-content {
   width: 100%;
-  background: $apple-gray;
+  background: $apple-white;
   border-radius: 32rpx;
   padding: 48rpx;
   text-align: center;
-  border: 1rpx solid $apple-border;
-  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.08);
 }
 
 .init-icon {
@@ -428,7 +427,7 @@ function selectGroup(group: any) {
 
 .init-desc {
   font-size: 28rpx;
-  color: $apple-text-muted;
+  color: $apple-text-secondary;
   display: block;
   margin-bottom: 40rpx;
 }
@@ -476,7 +475,6 @@ function selectGroup(group: any) {
   border: none;
   border-radius: 44rpx;
   padding: 28rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 122, 255, 0.3);
   
   &:active {
     opacity: 0.8;
@@ -505,7 +503,7 @@ function selectGroup(group: any) {
   }
   .date-text {
     font-size: 26rpx;
-    color: $apple-text-muted;
+    color: $apple-text-secondary;
     margin-left: 16rpx;
   }
 }
@@ -608,9 +606,9 @@ function selectGroup(group: any) {
     display: flex;
     align-items: center;
     padding: 24rpx;
-    background: $apple-gray;
+    background: $apple-white;
     border-radius: 20rpx;
-    border: 1rpx solid $apple-border;
+    box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
   }
   .stat-icon-wrapper {
     width: 88rpx;
@@ -622,10 +620,10 @@ function selectGroup(group: any) {
     margin-right: 20rpx;
     
     &.success {
-      background: rgba(52, 199, 89, 0.15);
+      background: rgba(52, 199, 89, 0.12);
     }
     &.warning {
-      background: rgba(255, 149, 0, 0.15);
+      background: rgba(255, 149, 0, 0.12);
     }
   }
   .stat-icon {
@@ -640,7 +638,7 @@ function selectGroup(group: any) {
     }
     .stat-label {
       font-size: 24rpx;
-      color: $apple-text-muted;
+      color: $apple-text-secondary;
     }
   }
 }
@@ -677,9 +675,9 @@ function selectGroup(group: any) {
   flex-direction: column;
   align-items: center;
   padding: 32rpx 0;
-  background: $apple-gray;
+  background: $apple-white;
   border-radius: 20rpx;
-  border: 1rpx solid $apple-border;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
   
   &:active {
     background: $apple-light-gray;
@@ -714,14 +712,13 @@ function selectGroup(group: any) {
   border-radius: 20rpx;
   
   &.unlocked {
-    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 142, 83, 0.15));
-    border: 1rpx solid rgba(255, 107, 107, 0.3);
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.12), rgba(255, 142, 83, 0.12));
+    border: 1rpx solid rgba(255, 107, 107, 0.25);
   }
   
   &.locked {
-    background: $apple-gray;
-    opacity: 0.4;
-    border: 1rpx solid $apple-border;
+    background: $apple-light-gray;
+    opacity: 0.5;
   }
   
   .achievement-icon {
@@ -843,14 +840,11 @@ function selectGroup(group: any) {
 }
 
 .group-card {
-  background: $apple-gray;
+  background: $apple-white;
   color: $apple-text;
   padding: 32rpx;
   border-radius: 24rpx;
-  border: 1rpx solid $apple-border;
-  box-shadow: 
-    0 4rpx 20rpx rgba(0, 0, 0, 0.2),
-    inset 0 1rpx 0 rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
 }
 
 .group-header {
@@ -965,14 +959,13 @@ function selectGroup(group: any) {
 
 .modal-content {
   width: 85%;
-  background: $apple-gray;
+  background: $apple-white;
   border-radius: 32rpx;
   padding: 48rpx;
   max-height: 80vh;
   display: flex;
   flex-direction: column;
-  border: 1rpx solid $apple-border;
-  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
 }
 
 .modal-title {

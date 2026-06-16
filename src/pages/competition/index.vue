@@ -172,7 +172,7 @@ function joinCompetition(competitionId: string) {
 
 .page {
   min-height: 100vh;
-  background: $apple-dark-gray;
+  background: $apple-light-gray;
   padding: 32rpx;
 }
 
@@ -374,10 +374,10 @@ function joinCompetition(competitionId: string) {
 
 .modal-content {
   width: 85%;
-  background: $apple-gray;
+  background: $apple-white;
   border-radius: 32rpx;
   padding: 48rpx;
-  border: 1rpx solid $apple-border;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
 }
 
 .modal-title {

@@ -239,7 +239,7 @@ function share() {
 
 .page {
   min-height: 100vh;
-  background: $apple-dark-gray;
+  background: $apple-light-gray;
   padding-bottom: 180rpx;
 }
 
@@ -483,10 +483,10 @@ function share() {
 
 .modal-content {
   width: 85%;
-  background: $apple-gray;
+  background: $apple-white;
   border-radius: 32rpx;
   padding: 48rpx;
-  border: 1rpx solid $apple-border;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
   
   &.share-modal {
     width: 90%;
