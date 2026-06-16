@@ -166,9 +166,7 @@ export const useUserStore = defineStore('user', () => {
   async function saveToCloud() {
     try {
       const db = uni.cloud.database()
-      await db.collection('users').doc(userInfo.value.id).set({
-        data: userInfo.value
-      })
+      await db.collection('users').doc(userInfo.value.id).set(userInfo.value)
       await db.collection('records').where({ userId: userInfo.value.id }).remove()
       for (const record of weightRecords.value) {
         await db.collection('records').add(record)
@@ -218,9 +216,7 @@ export const useUserStore = defineStore('user', () => {
           height: 0,
           createTime: Date.now()
         }
-        await db.collection('users').doc(openid).set({
-          data: userInfo.value
-        })
+        await db.collection('users').doc(openid).set(userInfo.value)
       }
       updateAchievements()
     } catch (e) {

@@ -1,10 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 
-const iconsDir = path.join(__dirname, '../src/static/icons');
+const tabbarDir = path.join(__dirname, '../src/static/tabbar');
 
-const createPNG = (width, height, r, g, b, a) => {
-  const signature = Buffer.from([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A]);
+if (!fs.existsSync(tabbarDir)) {
+  fs.mkdirSync(tabbarDir, { recursive: true });
+}
+
+function createPNG(width, height, r, g, b, a = 255) {
+  const signature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
   
   const ihdrData = Buffer.alloc(13);
   ihdrData.writeUInt32BE(width, 0);
@@ -25,30 +29,30 @@ const createPNG = (width, height, r, g, b, a) => {
     }
   }
   
-  const zlib = require('zlib');
-  const compressedData = zlib.deflateSync(Buffer.from(rawData));
-  const idatChunk = createChunk('IDAT', compressedData);
+  const { deflateSync } = require('zlib');
+  const compressed = deflateSync(Buffer.from(rawData));
+  const idatChunk = createChunk('IDAT', compressed);
   
   const iendChunk = createChunk('IEND', Buffer.alloc(0));
   
   return Buffer.concat([signature, ihdrChunk, idatChunk, iendChunk]);
-};
+}
 
-const createChunk = (type, data) => {
+function createChunk(type, data) {
   const length = Buffer.alloc(4);
   length.writeUInt32BE(data.length, 0);
   
-  const typeBuffer = Buffer.from(type, 'ascii');
+  const typeBuffer = Buffer.from(type);
   const crcData = Buffer.concat([typeBuffer, data]);
-  const crc = crc32(crcData);
   
+  const crc = crc32(crcData);
   const crcBuffer = Buffer.alloc(4);
   crcBuffer.writeUInt32BE(crc >>> 0, 0);
   
   return Buffer.concat([length, typeBuffer, data, crcBuffer]);
-};
+}
 
-const crc32 = (buffer) => {
+function crc32(buf) {
   let crc = 0xFFFFFFFF;
   const table = [];
   
@@ -60,32 +64,28 @@ const crc32 = (buffer) => {
     table[i] = c;
   }
   
-  for (let i = 0; i < buffer.length; i++) {
-    crc = table[(crc ^ buffer[i]) & 0xFF] ^ (crc >>> 8);
+  for (let i = 0; i < buf.length; i++) {
+    crc = table[(crc ^ buf[i]) & 0xFF] ^ (crc >>> 8);
   }
   
   return crc ^ 0xFFFFFFFF;
-};
-
-const icons = [
-  { name: 'home.png', color: [153, 153, 153, 255] },
-  { name: 'home-active.png', color: [255, 107, 107, 255] },
-  { name: 'record.png', color: [153, 153, 153, 255] },
-  { name: 'record-active.png', color: [255, 107, 107, 255] },
-  { name: 'friends.png', color: [153, 153, 153, 255] },
-  { name: 'friends-active.png', color: [255, 107, 107, 255] },
-  { name: 'profile.png', color: [153, 153, 153, 255] },
-  { name: 'profile-active.png', color: [255, 107, 107, 255] },
-];
-
-if (!fs.existsSync(iconsDir)) {
-  fs.mkdirSync(iconsDir, { recursive: true });
 }
 
-icons.forEach(({ name, color }) => {
-  const png = createPNG(48, 48, ...color);
-  fs.writeFileSync(path.join(iconsDir, name), png);
-  console.log(`Created ${name}`);
+const icons = [
+  { name: 'home.png', color: [134, 134, 139] },
+  { name: 'home-active.png', color: [0, 122, 255] },
+  { name: 'record.png', color: [134, 134, 139] },
+  { name: 'record-active.png', color: [0, 122, 255] },
+  { name: 'friends.png', color: [134, 134, 139] },
+  { name: 'friends-active.png', color: [0, 122, 255] },
+  { name: 'profile.png', color: [134, 134, 139] },
+  { name: 'profile-active.png', color: [0, 122, 255] },
+];
+
+icons.forEach(icon => {
+  const png = createPNG(48, 48, icon.color[0], icon.color[1], icon.color[2], 255);
+  fs.writeFileSync(path.join(tabbarDir, icon.name), png);
+  console.log(`Created: ${icon.name}`);
 });
 
-console.log('All icons created successfully!');
+console.log('All icons created!');

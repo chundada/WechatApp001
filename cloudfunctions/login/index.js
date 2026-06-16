@@ -1,10 +1,13 @@
+const cloud = require('wx-server-sdk')
+cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV })
+
 exports.main = async (event, context) => {
   const { code } = event
   
   try {
-    const res = await cloud.auth().signInWithCode(code)
+    const wxContext = cloud.getWXContext()
     return {
-      openid: res.openid,
+      openid: wxContext.OPENID,
       success: true
     }
   } catch (e) {

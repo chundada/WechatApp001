@@ -33,6 +33,7 @@
     },
     "usingComponents": true,
     "cloudfunctionRoot": "cloudfunctions/",
-    "cloud": true
+    "cloud": true,
+    "lazyCodeLoading": "requiredComponents"
   }
 }
