@@ -396,48 +396,51 @@ function selectGroup(group: any) {
   bottom: 0;
   background: $apple-light-gray;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 48rpx;
+  padding: 100rpx 48rpx 48rpx;
   z-index: 1000;
+  overflow-y: auto;
 }
 
 .init-content {
   width: 100%;
+  max-height: 85vh;
   background: $apple-white;
   border-radius: 32rpx;
-  padding: 48rpx;
+  padding: 40rpx;
   text-align: center;
   box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
 }
 
 .init-icon {
-  font-size: 80rpx;
+  font-size: 72rpx;
   display: block;
-  margin-bottom: 24rpx;
+  margin-bottom: 20rpx;
 }
 
 .init-title {
-  font-size: 36rpx;
+  font-size: 34rpx;
   font-weight: 700;
   color: $apple-text;
   display: block;
-  margin-bottom: 12rpx;
+  margin-bottom: 10rpx;
 }
 
 .init-desc {
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: $apple-text-secondary;
   display: block;
-  margin-bottom: 40rpx;
-}
-
-.init-form {
   margin-bottom: 32rpx;
 }
 
-.form-item {
+.init-form {
   margin-bottom: 28rpx;
+}
+
+.form-item {
+  margin-bottom: 24rpx;
   
   &:last-child {
     margin-bottom: 0;
@@ -445,19 +448,20 @@ function selectGroup(group: any) {
 }
 
 .form-label {
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: $apple-text-secondary;
   display: block;
-  margin-bottom: 12rpx;
+  margin-bottom: 10rpx;
   text-align: left;
 }
 
 .form-input {
   width: 100%;
+  box-sizing: border-box;
   background: $apple-light-gray;
   border-radius: 16rpx;
-  padding: 28rpx;
-  font-size: 32rpx;
+  padding: 24rpx 28rpx;
+  font-size: 30rpx;
   color: $apple-text;
   border: 1rpx solid $apple-border;
   
@@ -470,11 +474,11 @@ function selectGroup(group: any) {
   width: 100%;
   background: $apple-blue;
   color: #fff;
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: 600;
   border: none;
   border-radius: 44rpx;
-  padding: 28rpx;
+  padding: 26rpx;
   
   &:active {
     opacity: 0.8;
