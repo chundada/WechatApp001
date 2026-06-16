@@ -468,6 +468,10 @@ function selectGroup(group: any) {
   &:focus {
     border-color: $apple-blue;
   }
+  
+  &::placeholder {
+    color: $apple-text-muted;
+  }
 }
 
 .init-btn {
