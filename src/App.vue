@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onLaunch, onShow, onHide } from '@dcloudio/uni-app'
 import { useUserStore } from '@/stores/user'
+import { useFriendsStore } from '@/stores/friends'
+import { useGroupsStore } from '@/stores/groups'
 
 onLaunch(async () => {
   console.log('App Launch')
@@ -11,33 +13,61 @@ onLaunch(async () => {
     })
     
     const userStore = useUserStore()
+    const friendsStore = useFriendsStore()
+    const groupsStore = useGroupsStore()
     
     const loginRes = await uni.login({})
     if (loginRes.code) {
-      const res = await uni.cloud.callFunction({
-        name: 'login',
-        data: {
-          code: loginRes.code
-        }
-      })
-      
-      const openid = res.result.openid
-      
-      const userInfoRes = await uni.getUserProfile({
-        desc: '用于完善会员资料'
-      })
-      
-      await userStore.initUser(openid, userInfoRes.userInfo.nickName, userInfoRes.userInfo.avatarUrl)
-      
-      uni.showToast({
-        title: '登录成功',
-        icon: 'success'
-      })
+      try {
+        const res = await uni.cloud.callFunction({
+          name: 'login',
+          data: {
+            code: loginRes.code
+          }
+        })
+        
+        const openid = res.result.openid
+        
+        await userStore.initUser(openid, '', '')
+        
+        await friendsStore.loadFriends()
+        await friendsStore.loadCompetitions()
+        await groupsStore.loadGroups()
+        
+        uni.showToast({
+          title: '登录成功',
+          icon: 'success'
+        })
+      } catch (cloudError) {
+        console.log('云函数调用失败', cloudError)
+        const openid = 'test-user-' + Date.now()
+        await userStore.initUser(openid, '测试用户', '')
+        
+        await friendsStore.loadFriends()
+        await friendsStore.loadCompetitions()
+        await groupsStore.loadGroups()
+        
+        uni.showToast({
+          title: '离线模式',
+          icon: 'none'
+        })
+      }
     }
   } catch (e) {
-    console.log('登录失败', e)
+    console.log('初始化失败', e)
+    
+    const userStore = useUserStore()
+    const friendsStore = useFriendsStore()
+    const groupsStore = useGroupsStore()
+    
+    const openid = 'test-user-' + Date.now()
+    await userStore.initUser(openid, '测试用户', '')
+    await friendsStore.loadFriends()
+    await friendsStore.loadCompetitions()
+    await groupsStore.loadGroups()
+    
     uni.showToast({
-      title: '登录失败，请重试',
+      title: '离线模式',
       icon: 'none'
     })
   }

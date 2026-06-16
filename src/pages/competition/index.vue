@@ -130,7 +130,7 @@ const newCompetition = reactive({
 })
 
 const availableCompetitions = computed(() => {
-  return friendsStore.competitions.filter(c => !c.participants.includes('1'))
+  return friendsStore.competitions.filter(c => !c.participants.includes(userStore.userInfo.id))
 })
 
 function formatDate(dateStr: string) {
